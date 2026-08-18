@@ -7,9 +7,56 @@
 
   var header = document.querySelector(".site-header");
   var toggle = document.querySelector(".nav-toggle");
+  var themeToggle = document.querySelector(".theme-toggle");
   var nav = document.querySelector("#site-nav");
   var navLinks = nav ? nav.querySelectorAll("a") : [];
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function currentTheme() {
+    return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  }
+
+  function syncThemeToggle(theme) {
+    if (!themeToggle) return;
+    var isLight = theme === "light";
+    themeToggle.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+  }
+
+  function applyTheme(theme, persist) {
+    var next = theme === "light" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    if (persist) {
+      try {
+        localStorage.setItem("theme", next);
+      } catch (err) {
+        /* private mode or blocked storage */
+      }
+    }
+    syncThemeToggle(next);
+  }
+
+  syncThemeToggle(currentTheme());
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      applyTheme(currentTheme() === "dark" ? "light" : "dark", true);
+    });
+  }
+
+  try {
+    if (!localStorage.getItem("theme") && window.matchMedia) {
+      var scheme = window.matchMedia("(prefers-color-scheme: light)");
+      if (scheme.addEventListener) {
+        scheme.addEventListener("change", function (event) {
+          if (!localStorage.getItem("theme")) {
+            applyTheme(event.matches ? "light" : "dark", false);
+          }
+        });
+      }
+    }
+  } catch (err) {
+    /* ignore */
+  }
 
   function setNavOpen(open) {
     if (!toggle || !nav) return;
@@ -36,7 +83,9 @@
 
     document.addEventListener("keydown", function (event) {
       if (event.key !== "Tab" || toggle.getAttribute("aria-expanded") !== "true") return;
-      var focusable = [toggle].concat(Array.prototype.slice.call(navLinks));
+      var focusable = Array.prototype.slice.call(navLinks);
+      if (themeToggle) focusable.push(themeToggle);
+      focusable.push(toggle);
       var first = focusable[0];
       var last = focusable[focusable.length - 1];
       if (event.shiftKey && document.activeElement === first) {

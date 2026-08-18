@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" role="img" aria-label="Portrait placeholder">
   <defs>
     <pattern id="pgrid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M20 0H0V20" fill="none" stroke="#1c2430" stroke-width="1"/>
+      <path d="M20 0H0V20" fill="none" stroke="#2A2A2A" stroke-width="1"/>
     </pattern>
   </defs>
-  <rect width="400" height="480" fill="#12171f"/>
+  <rect width="400" height="480" fill="#141414"/>
   <rect width="400" height="480" fill="url(#pgrid)"/>
-  <circle cx="200" cy="188" r="64" fill="none" stroke="#3dd6c6" stroke-opacity="0.45" stroke-width="2"/>
-  <path d="M118 352c12-56 48-86 82-86s70 30 82 86" fill="none" stroke="#3dd6c6" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round"/>
-  <text x="200" y="430" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" letter-spacing="0.16em" fill="#6b7686">PHOTO PLACEHOLDER</text>
+  <circle cx="200" cy="188" r="64" fill="none" stroke="#FF6B00" stroke-opacity="0.55" stroke-width="2"/>
+  <path d="M118 352c12-56 48-86 82-86s70 30 82 86" fill="none" stroke="#FF6B00" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/>
+  <text x="200" y="430" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" letter-spacing="0.16em" fill="#8A8A8A">PHOTO PLACEHOLDER</text>
 </svg>

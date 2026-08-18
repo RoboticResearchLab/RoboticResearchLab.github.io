@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Project image placeholder">
   <defs>
     <pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M24 0H0V24" fill="none" stroke="#1c2430" stroke-width="1"/>
+      <path d="M24 0H0V24" fill="none" stroke="#2A2A2A" stroke-width="1"/>
     </pattern>
   </defs>
-  <rect width="640" height="400" fill="#0e1218"/>
+  <rect width="640" height="400" fill="#141414"/>
   <rect width="640" height="400" fill="url(#g)"/>
-  <g fill="none" stroke="#3dd6c6" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#FF6B00" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <rect x="250" y="150" width="140" height="90" rx="8"/>
     <circle cx="278" cy="258" r="18"/>
     <circle cx="362" cy="258" r="18"/>
     <path d="M270 150V122h100v28"/>
     <circle cx="320" cy="108" r="10"/>
   </g>
-  <text x="320" y="330" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" letter-spacing="0.16em" fill="#6b7686">PROJECT IMAGE PLACEHOLDER</text>
+  <text x="320" y="330" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" letter-spacing="0.16em" fill="#8A8A8A">PROJECT IMAGE PLACEHOLDER</text>
 </svg>
